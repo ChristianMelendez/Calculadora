@@ -15,30 +15,39 @@ public class Calculadora {
     int sumar;
     int restar;
     int multiplicar;
-    public void sumar(int numeroa,int numerob){
-        sumar=numeroa+numerob;
+    public void pedir(){
+        Scanner sc = new Scanner(System.in);
+       //-------Primer numero---------------------------------
+        System.out.print("Ingrese el primer numero: ");
+        numero1=sc.nextInt();
+        System.out.println("Usted ingreso: "+numero1);
+        //------Segundo numero--------------------------------
+        System.out.print("Ingrese el segundo numero: ");
+        numero2=sc.nextInt();
+        System.out.println("Usted ingreso: "+numero2);
     }
-    public void restar(int numeroa,int numerob){
-       
-        restar=numeroa-numerob;
+    public void sumar(){
+        sumar=numero1+numero2;
     }
-    public void multiplicar(int numeroa,int numerob){
-    
-        multiplicar=numeroa*numerob;
+    public void restar(){ 
+        restar=numero1-numero2;
+    }
+    public void multiplicar(){
+        multiplicar=numero1*numero2;
     }
     public void mostrar(){
-        System.out.println(sumar);
-        System.out.println(restar);
-        System.out.println(multiplicar);
+        System.out.println("La suma es: "+sumar);
+        System.out.println("La resta es: "+ restar);
+        System.out.println("La multiplicacion es: "+multiplicar);
     }
     public static void main (String[]args){
-        Calculadora Calculadora2=new Calculadora ();
-        int a=30;
-        int b=40;
-        Calculadora2.sumar(a,b);
-        Calculadora2.restar(a,b);
-        Calculadora2.multiplicar(a,b);
-        Calculadora2.mostrar();
+        
+        Calculadora op1 = new Calculadora ();
+        op1.pedir();
+        op1.sumar();
+        op1.restar();
+        op1.multiplicar();
+        op1.mostrar();
         
     }
 }
